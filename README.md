@@ -22,12 +22,12 @@ This repo contain my notes for decentralized web concepts, protocols, and tools 
 
      - A CID is a single identifier that contains both a **cryptographic hash** and a **codec**, which holds information about how to interpret that data. Codecs encode and decode data in certain formats.
 
-        ![CID](./imgs/CID_01.png)
+        ![CID 01](./imgs/CID_01.png)
 
      - Tools like Git and protocols like Ethereum and Bitcoin use content addressing but they differ in how to interpret the data and in what cryptographic function they use for hashing. CID allows us to create a universal identifier for any of these systems.
 
      - Every CID is an identifier that contains the [codec](https://github.com/multiformats/multicodec) to interpret the data and a [multihash](https://github.com/multiformats/multihash) which is a self-describing hash (a hash that tells us what type of hashing function was used to create it).
 
-        ![CID](./imgs/CID_02.png)
+        ![CID 02](./imgs/CID_02.png)
 
   4. Cryptographic hash of a particular piece of data can be used as a link to retrieve that data from peers on the decentralized web. However, CIDs can be used to express data structures, conveying meaning about the relationships between various pieces of data.
