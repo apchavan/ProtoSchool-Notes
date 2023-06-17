@@ -4,6 +4,8 @@ This repo contain my notes for decentralized web concepts, protocols, and tools 
 
 ## 1. Content Addressing on the Decentralized Web
 
+  Hashing & content addressing enable verifiable data sharing with peers on the decentralized web.
+
   1. URLs are based on the location where data is stored, not on the contents of the resource stored there. This is called _location addressing_.
 
   2. Cryptographic hashing is the most important tool in the toolbox of decentralized data structures. It opens the door to a new form of linking, known as _content addressing_, that liberates us from reliance on central authorities.
