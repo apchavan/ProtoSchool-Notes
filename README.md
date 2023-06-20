@@ -31,3 +31,9 @@ This repo contain my notes for decentralized web concepts, protocols, and tools 
         ![CID 02](./imgs/CID_02.png)
 
   4. Cryptographic hash of a particular piece of data can be used as a link to retrieve that data from peers on the decentralized web. However, CIDs can be used to express data structures, conveying meaning about the relationships between various pieces of data.
+
+## 2. Anatomy of a CID
+
+  CIDs (Content Identifiers) are the unique labels used to point to data stored on distributed information systems including IPFS, IPLD, libp2p, and Filecoin.
+
+  1. 
