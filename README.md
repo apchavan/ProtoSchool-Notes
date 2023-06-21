@@ -4,39 +4,39 @@ This repo contain my notes for decentralized web concepts, protocols, and tools 
 
 ## 1. Content Addressing on the Decentralized Web
 
-  Hashing & content addressing enable verifiable data sharing with peers on the decentralized web.
+   Hashing & content addressing enable verifiable data sharing with peers on the decentralized web.
 
-  1. URLs are based on the location where data is stored, not on the contents of the resource stored there. This is called _location addressing_.
+   1. URLs are based on the location where data is stored, not on the contents of the resource stored there. This is called _location addressing_.
 
-  2. Cryptographic hashing is the most important tool in the toolbox of decentralized data structures. It opens the door to a new form of linking, known as _content addressing_, that liberates us from reliance on central authorities.
+   2. Cryptographic hashing is the most important tool in the toolbox of decentralized data structures. It opens the door to a new form of linking, known as _content addressing_, that liberates us from reliance on central authorities.
   
-     - Hashing takes data of any size and type and returns a single, fixed-size "hash" that represents it. A hash is a string of characters, a unique name for the data.
+      - Hashing takes data of any size and type and returns a single, fixed-size "hash" that represents it. A hash is a string of characters, a unique name for the data.
 
-     - Cryptographic hashes can be derived from the content of the data itself, meaning that anyone using the same algorithm on the same data will arrive at the same hash.
+      - Cryptographic hashes can be derived from the content of the data itself, meaning that anyone using the same algorithm on the same data will arrive at the same hash.
 
-     - Cryptographic hashes are unique.
+      - Cryptographic hashes are unique.
 
-     Content addressing can be used on all different types of files and data.
+      Content addressing can be used on all different types of files and data.
 
-  3. A [CID (Content Identifier)](https://docs.ipfs.tech/concepts/content-addressing/) is a particular form of content addressing used on the decentralized web.
+   3. A [CID (Content Identifier)](https://docs.ipfs.tech/concepts/content-addressing/) is a particular form of content addressing used on the decentralized web.
 
-     - A CID is a single identifier that contains both a **cryptographic hash** and a **codec**, which holds information about how to interpret that data. Codecs encode and decode data in certain formats.
+      - A CID is a single identifier that contains both a **cryptographic hash** and a **codec**, which holds information about how to interpret that data. Codecs encode and decode data in certain formats.
      
          ![CID 01](./imgs/CID_01.png)
 
-     - Tools like Git and protocols like Ethereum and Bitcoin use content addressing but they differ in how to interpret the data and in what cryptographic function they use for hashing. CID allows us to create a universal identifier for any of these systems.
+      - Tools like Git and protocols like Ethereum and Bitcoin use content addressing but they differ in how to interpret the data and in what cryptographic function they use for hashing. CID allows us to create a universal identifier for any of these systems.
 
-     - Every CID is an identifier that contains the [codec](https://github.com/multiformats/multicodec) to interpret the data and a [multihash](https://github.com/multiformats/multihash) which is a self-describing hash (a hash that tells us what type of hashing function was used to create it).
+      - Every CID is an identifier that contains the [codec](https://github.com/multiformats/multicodec) to interpret the data and a [multihash](https://github.com/multiformats/multihash) which is a self-describing hash (a hash that tells us what type of hashing function was used to create it).
      
          ![CID 02](./imgs/CID_02.png)
 
-  4. Cryptographic hash of a particular piece of data can be used as a link to retrieve that data from peers on the decentralized web. However, CIDs can be used to express data structures, conveying meaning about the relationships between various pieces of data.
+   4. Cryptographic hash of a particular piece of data can be used as a link to retrieve that data from peers on the decentralized web. However, CIDs can be used to express data structures, conveying meaning about the relationships between various pieces of data.
 
 ## 2. Anatomy of a CID
 
-  CIDs (Content Identifiers) are the unique labels used to point to data stored on distributed information systems including IPFS, IPLD, libp2p, and Filecoin.
+   CIDs (Content Identifiers) are the unique labels used to point to data stored on distributed information systems including IPFS, IPLD, libp2p, and Filecoin.
 
-  1. What is a CID?
+   1. What is a CID?
 
       - The [CID specification](https://github.com/multiformats/cid), which originated in IPFS, now lives in Multiformats and supports a broad range of projects including IPFS, IPLD, libp2p, and Filecoin.
 
@@ -60,4 +60,4 @@ This repo contain my notes for decentralized web concepts, protocols, and tools 
 
       - Cryptographic hashing is not unique to IPFS, and there are many hashing algorithms out there like sha2-256, blake2b, sha3-256 and sha3-512, the no-longer-secure sha1 and md5, etc. IPFS uses *sha2-256* by default, though a CID supports virtually any strong cryptographic hash algorithm.
 
-  2. 
+   2. 
