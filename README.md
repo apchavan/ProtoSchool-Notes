@@ -60,4 +60,22 @@ This repo contain my notes for decentralized web concepts, protocols, and tools 
 
       - Cryptographic hashing is not unique to IPFS, and there are many hashing algorithms out there like sha2-256, blake2b, sha3-256 and sha3-512, the no-longer-secure sha1 and md5, etc. IPFS uses *sha2-256* by default, though a CID supports virtually any strong cryptographic hash algorithm.
 
-   2. 
+   2. Multihash
+
+      - A [multihash](https://multiformats.io/multihash/) is a self-describing hash which itself contains metadata that describes both its length and what cryptographic algorithm generated it. Multiformats CIDs are future-proof because they use multihash to support multiple hashing algorithms rather than relying on a specific one.
+
+      - Multihashes follow the `TLV` pattern (type-length-value). Essentially, the "original hash" is prefixed with the type of hashing algorithm applied and the length of the hash.
+
+         ![Multihash Format](./imgs/multihash_format_01.jpg)
+
+         - ***type***: identifier of the cryptographic algorithm used to generate the hash (e.g. the identifier of `sha2-256` would be `18` - `0x12` in hexadecimal) - see the [multicodec table](https://github.com/multiformats/multicodec/blob/master/table.csv) for all the identifiers.
+
+         - ***length***: the actual length of the hash (using `sha2-256` it would be `256` bits, which equates to 32 bytes).
+
+         - ***value***: the actual hash value.
+
+      - In order to represent a CID as a compact string instead of plain binary (a series of 1s and 0s), the *base encoding* is used.
+
+      - Multihash formatting and `base58btc` encoding enabled this first version of the CID, now referred to as Version 0 (`CIDv0`), and its initial `Qm...` characters remain easy to spot. An example `CIDv0` is, *QmY7Yh4UquoXHLPFo2XbhXkhBvFoPwmQUSa92pxnxjQuPU*.
+
+   3. 
