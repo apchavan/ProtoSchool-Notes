@@ -58,7 +58,7 @@ This repo contain my notes for decentralized web concepts, protocols, and tools 
 
          - ***Unique***: Only one file can produce one specific hash.
 
-      - Cryptographic hashing is not unique to IPFS, and there are many hashing algorithms out there like sha2-256, blake2b, sha3-256 and sha3-512, the no-longer-secure sha1 and md5, etc. IPFS uses *sha2-256* by default, though a CID supports virtually any strong cryptographic hash algorithm.
+      - Cryptographic hashing is not unique to IPFS, and there are many hashing algorithms out there like sha2-256, blake2b, sha3-256 and sha3-512, the no-longer-secure sha1 and md5, etc. IPFS uses `sha2-256` by default, though a CID supports virtually any strong cryptographic hash algorithm.
 
    2. Multihash
 
@@ -76,6 +76,6 @@ This repo contain my notes for decentralized web concepts, protocols, and tools 
 
       - In order to represent a CID as a compact string instead of plain binary (a series of 1s and 0s), the *base encoding* is used.
 
-      - Multihash formatting and `base58btc` encoding enabled this first version of the CID, now referred to as Version 0 (`CIDv0`), and its initial `Qm...` characters remain easy to spot. An example `CIDv0` is, *QmY7Yh4UquoXHLPFo2XbhXkhBvFoPwmQUSa92pxnxjQuPU*.
+      - Multihash formatting and `base58btc` encoding enabled this first version of the CID, now referred to as Version 0 (`CIDv0`), and its initial `Qm...` characters remain easy to spot. An example of `CIDv0` is, *QmY7Yh4UquoXHLPFo2XbhXkhBvFoPwmQUSa92pxnxjQuPU*.
 
    3. 
