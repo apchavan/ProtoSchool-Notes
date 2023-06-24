@@ -78,4 +78,16 @@ This repo contain my notes for decentralized web concepts, protocols, and tools 
 
       - Multihash formatting and `base58btc` encoding enabled this first version of the CID, now referred to as Version 0 (`CIDv0`), and its initial `Qm...` characters remain easy to spot. An example of `CIDv0` is, *QmY7Yh4UquoXHLPFo2XbhXkhBvFoPwmQUSa92pxnxjQuPU*.
 
-   3. 
+   3. CIDv1: Multicodec prefix
+
+      - The data could be encoded with CBOR, Protobuf, plain JSON, etc. To solve this issue, `CIDv1` introduces another prefix that uniquely identifies the encoding method used.
+
+      - The **multicodec prefix** indicates which encoding was used on the data.
+
+         ![Multicodec Prefix](./imgs/multicodec_prefix_01.png)
+
+      - Multicodec supports many different types of encoding, and each has its own short codec identifier, as shown in the [complete table](https://github.com/multiformats/multicodec/blob/master/table.csv).
+
+      - In above example, `dag-pb` is one of many different types of [IPLD](https://ipld.io/) (InterPlanetary Linked Data) codecs. Because IPFS always uses one of these IPLD formats for its data, the multicodec prefix in an IPFS CID will always be an IPLD codec.
+
+      - However, it's important to note that multicodec isn't only used by IPFS and IPLD. Along with multihash and a few other self-describing protocols, it's part of the [Multiformats](https://multiformats.io/) project, which spun off from IPFS and now supports a wide variety of other projects and protocols, including the [CID specification](https://github.com/multiformats/cid) explained here.
