@@ -91,3 +91,17 @@ This repo contain my notes for decentralized web concepts, protocols, and tools 
       - In above example, `dag-pb` is one of many different types of [IPLD](https://ipld.io/) (InterPlanetary Linked Data) codecs. Because IPFS always uses one of these IPLD formats for its data, the multicodec prefix in an IPFS CID will always be an IPLD codec.
 
       - However, it's important to note that multicodec isn't only used by IPFS and IPLD. Along with multihash and a few other self-describing protocols, it's part of the [Multiformats](https://multiformats.io/) project, which spun off from IPFS and now supports a wide variety of other projects and protocols, including the [CID specification](https://github.com/multiformats/cid) explained here.
+
+   4. CIDv1: Version prefix
+
+      - After adding a multicodec, Version 1 CID contains the following fields:
+
+         `<multicodec><multihash-algorithm><multihash-length><multihash-hash>`
+
+      - But the Version 0 CIDs only contain the `<multihash-*>` parts, to distinguish between different versions of CIDs there's also a version prefix called `<cid-version>`. So the CID looks like:
+
+         `<cid-version><multicodec><multihash>`
+
+         The <cid-version> represents the version of the CID (0 or 1).
+
+         ![Version Prefix](./imgs/version_prefix_01.png)
